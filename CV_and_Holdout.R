@@ -29,5 +29,23 @@ SetTarget(project=project, target=target, partition = partition, mode = 'quick')
 UpdateProject(project = project$projectId, workerCount = maxWorkers, holdoutUnlocked = TRUE)
 
 WaitForAutopilot(project = project)
- 
+
+
+# ##########################
+# Retrieve the model list
+# And choose a model
+# based on CV score
+# ##########################
+library(dplyr)
+
+models 		<- ListModels(project)
+
+full_mods 	<- as.data.frame(models, simple = FALSE) 
+
+# FILTER OUT ROWS WITH NO CROSS VALIDATION
+
+filtered_mods	<- full_mods[!is.na(full_mods$AUC.crossValidation),]
+
+dplyr::arrange(filtered_mods, AUC.crossValidation)
+
 
