@@ -46,6 +46,8 @@ full_mods 	<- as.data.frame(models, simple = FALSE)
 
 filtered_mods	<- full_mods[!is.na(full_mods$AUC.crossValidation),]
 
-dplyr::arrange(filtered_mods, AUC.crossValidation)
+mods		<- dplyr::arrange(filtered_mods, desc(AUC.crossValidation))
+
+final_model	<- mods[1,]
 
 
