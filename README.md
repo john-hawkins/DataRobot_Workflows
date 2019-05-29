@@ -20,5 +20,9 @@ using a new dataset.
 [Retrain_a_model.R](Retrain_a_model.R)
 
 
+## retrain_python
 
+Example in Python of retraining a blueprint on a new project, potentially in a separate prod environment.
+
+[retrain.py](retrain_python/retrain.py)
 
