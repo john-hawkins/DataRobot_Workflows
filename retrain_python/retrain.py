@@ -1,6 +1,7 @@
 # Example workflow script to:
 # Create a project and run autopilot
 # Take the best blueprint and retrain that approach on a new project
+# Create a deployment using this newly created model
 #
 # This scripts assumes a yaml config file has been created at:
 # '~/.config/datarobot/drconfig.yaml'
@@ -8,6 +9,8 @@
 # containing the path to DataRobot, and your token:
 # endpoint: https://app.datarobot.com/api/v2/
 # token: not-my-real-token
+#
+# NOTE: need package datarobot>=2.17.0 for deployment creation
 
 import pandas as pd
 import datarobot as dr
@@ -107,33 +110,16 @@ model.set_prediction_threshold(threshold)
 
 ################################################################################
 # create a deployment
-import requests
-import json
 
-API_TOKEN = ''
+# get an available prediction server
+prediction_server = dr.PredictionServer.list()[0]
 
-# set HTTP headers
-headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Token %s' % API_TOKEN
-}
+# create a deployment
+deployment = dr.Deployment.create_from_learning_model(
+    model.id,
+    label='delays2013',
+    description='Retrained model for flight delays',
+    default_prediction_server_id=prediction_server.id)
 
-# generate deployment
-deploy_response = requests.post(
-    'https://app.datarobot.com/api/v2/modelDeployments/asyncCreate/',
-    headers=headers,
-    json={
-        # link to model using project and model ids
-        'projectId': project.id,
-        'modelId': model.id,
-        # omit this for on premise install
-        'instanceId': '',
-        # name and description of deployment
-        'label': 'delays2013',
-        'description': 'Retrained model for flight delays',
-        'deploymentType': 'dedicated'
-    })
-deploy_response.raise_for_status()
-
-# get resulting deployment id
-deployment_id = json.loads(deploy_response.content)['id']
+# get id to for use by downstream applications
+deployment.id
