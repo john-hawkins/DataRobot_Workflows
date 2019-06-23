@@ -26,3 +26,9 @@ Example in Python of retraining a blueprint on a new project, potentially in a s
 
 [retrain.py](retrain_python/retrain.py)
 
+
+## Add Actuals to a DataRobot Deployment
+
+After a DataRobot deployment is used to make predictions against records, you can monitor performance by feeding back actual outcomes once they become known.
+
+[add_actuals.py](add_actuals.py)
