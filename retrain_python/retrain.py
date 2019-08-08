@@ -37,7 +37,7 @@ project.get_metrics('was_delayed')['available_metrics']
 featurelist = project.create_featurelist('myfeatures', list(df.columns.values))
 
 # for other advanced options see the docs, e.g.
-# https://datarobot-public-api-client.readthedocs-hosted.com/en/v2.16.0/autodoc/api_reference.html#advanced-options-api
+# https://datarobot-public-api-client.readthedocs-hosted.com/en/v2.17.0/autodoc/api_reference.html#advanced-options-api
 
 # run autopilot
 project.set_target(
@@ -121,5 +121,11 @@ deployment = dr.Deployment.create_from_learning_model(
     description='Retrained model for flight delays',
     default_prediction_server_id=prediction_server.id)
 
-# get id to for use by downstream applications
-deployment.id
+# replace an existing deployment
+#
+# deployment = [d for d in dr.Deployment.list() if d.label == 'delays2013'][0]
+# deployment.replace_model(model.id, dr.enums.MODEL_REPLACEMENT_REASON.SCHEDULED_REFRESH)
+
+# get id for use by downstream applications
+# ideally this would be stored somewhere
+print(deployment.id)
