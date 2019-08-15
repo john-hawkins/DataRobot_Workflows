@@ -10,7 +10,7 @@ The structure of the workflow looks like:
     * Create a project by importing your dataset
     * Run autopilot to create models
     * Choose the best model based on your business criteria
-    * Export the blueprint of the best modeL, so that it can be retrained and deployed in prod
+    * Export the blueprint of the best model, so that it can be retrained and deployed in prod
 2. In the production environment
     * Create a project by importing the same dataset as in dev
     * Run manual mode
@@ -34,6 +34,8 @@ Deploy this best model in your dev or your prod environment using:
 ```{bash}
 python dev_or_prod_deploy.py
 ```
+
+This script assumes that `drconfig.yaml` and `bp.pkl` exist in the current working directory.
 
 ## Assumptions:
 
