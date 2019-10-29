@@ -26,9 +26,25 @@ Example in Python of retraining a blueprint on a new project, potentially in a s
 
 [retrain.py](retrain_python/retrain.py)
 
+## API_Workflow_EndtoEnd 
+
+Example in Python for a step by step process to Build, deploy and get predictions from DataRobot via API. Most of the code here leverages retrain_python but updated with the latest changes from DataRobot. This code is particularly relevant for systems where the DataRobot Prediction environment is isolated and the DRX file cannot be transfered to it. The prediction environment is a DataRobot Standalone Instance.
+
+1. [Model Training.py]()
+   
+   Builds the model and save the winning BluePrint. Runs it on Autopilot but selects a model that isn't a Blender. 
+
+2. [Model Deployment.py]()
+
+   Retrains the winning model BluePrint built in the Development area. We have to obtain the model artificats from step 1 above, to the prediction environment where prediction outputs will flow downstream. The outputs (model and predictions) should be exactly the same here and in DEV. But yet to verify this.... 
+
+3. [Get Predictions.py]()
+
+   Now that we have replicated the model in the prediction environment, we can now get predictions by submitting a new dataset. This is a test to ensure that the predictions does indeed return and in an expected format.
 
 ## Add Actuals to a DataRobot Deployment
 
 After a DataRobot deployment is used to make predictions against records, you can monitor performance by feeding back actual outcomes once they become known.
 
 [add_actuals.py](add_actuals.py)
+
