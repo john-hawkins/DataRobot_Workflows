@@ -1,7 +1,7 @@
 """
 @author: Eu Jin Lok
 
-Using the API to train a model on DataRobot, and serealise the model  
+Using the API to train a model on DataRobot, and serialise the model  
 
 NOTE: 
 - Python environment was used but not commited to repo. Initiate python environment on the terminal:

@@ -42,6 +42,13 @@ Example in Python for a step by step process to Build, deploy and get prediction
 
    Now that we have replicated the model in the prediction environment, we can now get predictions by submitting a new dataset. This is a test to ensure that the predictions does indeed return and in an expected format.
 
+4. [4.Model_Monitoring_Management.py]()
+
+    We can get predictions via the REST API route as well, so this script allows you to run this script on the command line anywhere as long as you're on the web and have DataRobot Credentials. An example of how to run: 
+    ```
+    python API_Workflow_EndtoEnd/4.Model_Monitoring_Management.py "retrain_python/logan-US-2014.csv"
+    ```
+
 ## Add Actuals to a DataRobot Deployment
 
 After a DataRobot deployment is used to make predictions against records, you can monitor performance by feeding back actual outcomes once they become known.

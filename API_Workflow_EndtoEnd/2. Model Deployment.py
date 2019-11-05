@@ -1,7 +1,7 @@
 """
 @author: Eu Jin Lok
 
-Deploying model onto a new environment to enable predictions, using the serealised model
+Deploying model onto a new environment to enable predictions, using the serialised model
 
 NOTE: 
 - Items to bring to new environment 
