@@ -30,7 +30,7 @@ df = pd.read_csv(
 df.head()
 
 # create a project in Datarobot now, can also be a filepath directory to a url
-project = dr.Project.create(df, project_name = 'delays2013')
+project = dr.Project.create(df, project_name = 'delays2013')  # set wait time for large datasets - max_wait=2000, read_timeout=2000
 
 # %% Setup autopilot 
 # Check on DataRobot app that the data is uploaded, project called 'delays2013'
