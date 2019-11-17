@@ -1,6 +1,6 @@
 """
 Usage:
-    python API_Workflow_EndtoEnd/4.Model_Monitoring_Management.py "retrain_python/logan-US-2014.csv"
+    python API_Workflow_EndtoEnd/Model_Monitoring_Management.py "retrain_python/logan-US-2014.csv"
 This example uses the requests library which you can install with:
     pip install requests
 We highly recommend that you update SSL certificates with:

@@ -30,6 +30,19 @@ dr.Project.list()
 All_p = dr.Project.list()
 ids = [p.id for p in All_p]
 
+'''
+# Create an empty dataframe object 
+df = pd.DataFrame({'project name': [], 'id': []})
+
+# loop through the list and append both name and ID to the empty dataframe
+for p in All_p:
+    df = df.append(
+        {'project name': p.project_name
+        ,'id': p.id 
+        },ignore_index = True
+    )
+'''
+
 # %% Retrain 
 # Get the first Project ID, and the correct model ID
 project = dr.Project.get(ids[0])
