@@ -99,10 +99,13 @@ df = df.sample(n=25000, random_state=42, replace = True)
 
 # Lets generate a simulated dataset for submission and run the 
 # Model_Monitoring_Management.py script 
-df['daily_rainfall'] = np.random.random_integers(0,3000,len(df)) /1000
+df['daily_rainfall'] = np.random.random_integers(0,10,len(df)) /1000
 df.to_csv("retrain_python/logan-US-2014_event_id.csv", index = False)
 
+# %% 
 # Now feedback actuals 
+# NOTE: Make sure you run:
+# python API_Workflow_EndtoEnd/Model_Monitoring_Management.py "retrain_python/logan-US-2014_event_id.csv"
 df = pd.read_csv("retrain_python/logan-US-2014_event_id.csv")
 df = df[['event_id','was_delayed']]
 df.event_id = df.event_id.astype(str)
