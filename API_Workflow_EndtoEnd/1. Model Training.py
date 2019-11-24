@@ -56,6 +56,10 @@ best_model = dr.ModelRecommendation.get(project.id).get_model()
 print(best_model)
 best_model.blueprint_id
 
+# serialize this and store somewhere
+bp = [bp for bp in project.get_blueprints() if bp.id == best_bp][0]
+pickle.dump(bp, open('bp.pkl', 'wb'))
+
 # store the artifacts for future references 
 param = {
     "project ID": project.id,
