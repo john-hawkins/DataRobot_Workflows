@@ -1,0 +1,5 @@
+new_env/
+.vscode/
+*.yaml
+*.DS_Store
+Deployment_Creds.json
