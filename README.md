@@ -24,7 +24,7 @@ using a new dataset.
 
 Example in Python of retraining a blueprint on a new project, potentially in a separate prod environment.
 
-[retrain_python/retrain.py](retrain_python/retrain.py)
+[retrain_python](retrain_python/README.md)
 
 
 ## Add Actuals to a DataRobot Deployment
@@ -39,6 +39,6 @@ After a DataRobot deployment is used to make predictions against records, you ca
 A python command line application that will take a training data set location and a target column and run a
 DataRobot Autopilot. Optional parameter to auto-deploy.
 
-[auto_build_deploy/README.md](auto_build_deploy/README.md)
+[auto_build_deploy](auto_build_deploy/README.md)
 
 
