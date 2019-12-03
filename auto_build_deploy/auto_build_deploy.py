@@ -32,10 +32,10 @@ def main():
         # FINALLY  THE PARAMETERS
         # ########################################################################
 
-        #print(project_id, model_id, deploy_id)
+        # print(project_id, model_id, deploy_id)
         dict_file = {'project_id' : project_id, 'model_id' :model_id, 'deployment_id' : deploy_id}
-        with open(outfile, 'w') as file:
-            documents = yaml.dump(dict_file, file)
+        with open(out_file, 'w') as file:
+            documents = yaml.dump(dict_file, file, default_flow_style=False)
 
 #################################################################################
 def print_usage(args):

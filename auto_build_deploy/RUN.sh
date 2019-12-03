@@ -6,4 +6,5 @@
 
 python auto_build_deploy.py ../data/test_data.csv outcome AutoBuildTest results_config.yaml True
 
+cat results_config.yaml
  
