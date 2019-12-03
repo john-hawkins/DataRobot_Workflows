@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # ###########################################################
-# EXAMPLE RUN OF THE AUTO BUILD & DEPLOY APPLICATION
-# THE RETURNED VALUES ARE CAPTURED IN THE VARIABLE 'results'
+# AUTO BUILD & DEPLOY APPLICATION
+#
+# The DataRobot project, model and deployment comnfiguration 
+# details will be written to the file results_config.yaml (4th param)
 
 python auto_build_deploy.py ../data/test_data.csv outcome AutoBuildTest results_config.yaml True
 

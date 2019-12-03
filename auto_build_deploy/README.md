@@ -6,6 +6,8 @@ a DataRobot autopilot and return the project and model id. In addition
 it can automatically deploy the recommended model, replacing an existing
 deployment where one exists.
 
+All parameters are then written to a YAML file for later use by other scripts.
+
 You will be able to use this script as a starting point to customise your
 own autopilot run and model selection criteria.
 

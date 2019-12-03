@@ -28,11 +28,7 @@ def main():
         if deploy=="True":
             deploy_id = deploy_model(project_id, model_id, project_name)
 
-        # ########################################################################
-        # FINALLY  THE PARAMETERS
-        # ########################################################################
-
-        # print(project_id, model_id, deploy_id)
+        # FINALLY WRITE TO DISK
         dict_file = {'project_id' : project_id, 'model_id' :model_id, 'deployment_id' : deploy_id}
         with open(out_file, 'w') as file:
             documents = yaml.dump(dict_file, file, default_flow_style=False)
@@ -40,7 +36,7 @@ def main():
 #################################################################################
 def print_usage(args):
     print("USAGE ")
-    print(args[0], "<PATH TO TRAINING DATA> <TARGET COLUMN NAME> <PROJECT NAME> (<DEPLOY> DEFAULT=False)")
+    print(args[0], "<PATH TO TRAINING DATA> <TARGET COLUMN NAME> <PROJECT NAME> <RESULTS YAML FILE> (<DEPLOY> DEFAULT=False)")
     print()
     print("Run the DataRobot Autopilot")
     print()
