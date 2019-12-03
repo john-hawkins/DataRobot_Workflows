@@ -15,7 +15,7 @@ library(datarobot)
 # We need the identifiers for the existing project and model
 project_id 	<- '5b19f64fdb03716d1a23be8b'
 model_id 	<- '5b19f67d621c1e742150cacc'
-newdata		<- 'test_data.csv'
+newdata		<- 'data/test_data.csv'
 
 # GET THE BLUEPRINT ID
 project 	<- GetProject(project_id)
@@ -31,6 +31,7 @@ newproj_id	<- newproj$projectId
 
 # NOW TRAIN THAT MODEL
 totrain			<- list()
+
 # THIS PART IS A BIT COUNTER-INTUITIVE 
 # - YOU NEED THE PROJECT_ID FROM THE ORIGINAL PROJECT
 totrain$projectId 	<- project_id
