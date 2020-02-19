@@ -63,6 +63,8 @@ best_model = max(
     valid_models, key=lambda m: m.metrics[project.metric]['crossValidation'])
 
 # get top blueprint id
+# note this is preferred to model.blueprint as it will take the original bp
+# available from the repository, instead of a potentially trimmed version
 best_bp = best_model.blueprint_id
 
 # extract top blueprint object

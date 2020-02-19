@@ -68,10 +68,7 @@ old_bp = pickle.load(open('bp.pkl', 'rb'))
 # new_bp = [bp for bp in project.get_blueprints() if old_bp.model_type == bp.model_type][0]
 #
 # get a blueprint of the same type and with the same feature engineering
-# new_bp = [bp for bp in project.get_blueprints() if old_bp.processes == bp.processes][0]
-#
-# retrain exactly the same model, requires project settings and dataset to be exactly the same
-new_bp = old_bp
+new_bp = [bp for bp in project.get_blueprints() if old_bp.processes == bp.processes][0]
 #
 ## End
 
